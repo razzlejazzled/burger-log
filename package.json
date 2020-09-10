@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/razzlejazzled/burger-log/issues"
   },
-  "homepage": "https://github.com/razzlejazzled/burger-log#readme"
+  "homepage": "https://github.com/razzlejazzled/burger-log#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
 }
