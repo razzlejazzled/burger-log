@@ -1,9 +1,9 @@
 $(function() {
     $(".eatBurger").on("click", function(event) {
-        const id = $(this).data("id");
-        const newMeal = $(this).data("newMeal");
+        let id = $(this).data("id");
+        let newMeal = $(this).data("newMeal");
 
-        const newEatenState = {
+       let newEatenState = {
             devoured: newMeal
         };
 
