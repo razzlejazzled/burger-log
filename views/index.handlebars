@@ -8,6 +8,9 @@
         <div class = "col-6-md">
             <ul>
                 {{#each burgers}}
+                    {{#unless devoured}}
+                        {{> burgers/burger-block devoured=true}}
+                    {{/unless}}
                 <li>{{this.id}}. {{this.burger}}
                     <button data-burgerid="{{this.id}}" class="eatBurger">Eat 'da Burger!</button>
                 </li>
@@ -17,9 +20,12 @@
         <div class = "col-6-md">
             <ul>
                 {{#each burgers}}
+                    {{#if devoured}}
+                        {{> burgers/burger-block devoured=false}}
                 <li>
                     {{this.id}}. {{this.burger}}
                 </li>
+                    {{/if}}
                 {{/each}}
             </ul>
         </div>
@@ -29,7 +35,7 @@
             <div class="form-group">
                 <input type="text" class = "form-control" id="burgerOrder">
             </div>
-            <button type="submit" class="btn btn-primary">Order your burger!</button>
+            <button type="submit" id = "orderBtn class="btn btn-primary">Order your burger!</button>
         </form>
     </div>
     <div>
