@@ -1,9 +1,9 @@
 const connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
-    const app = [];
+    const arr = [];
     for (var i = 0; i < num; i++) {
-        arguments.push("?");
+        arr.push("?");
     }
     return arr.toString();
 }
@@ -33,13 +33,13 @@ const orm = {
         });
     },
     create: function(table, cols, vals, cb){
-        const queryString = "INSERT INTO " + table;
+       let queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += pringQuestionMarks(vals.length);
+        queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
         console.log(queryString);
@@ -53,7 +53,7 @@ const orm = {
     },
 
     update: function(table, objColVals, condition, cb) {
-        const queryString = "UPDATE " + table;
+        let queryString = "UPDATE " + table;
 
         queryString += " SET ";
         queryString += objToSql(objColVals);
