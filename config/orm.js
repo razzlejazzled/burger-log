@@ -20,6 +20,7 @@ function objToSql(ob) {
             arr.push(key + "=" + value)
         }
     }
+    return arr.toString();
 }
 
 const orm = {
@@ -54,7 +55,7 @@ const orm = {
 
     update: function(table, objColVals, condition, cb) {
         let queryString = "UPDATE " + table;
-
+        console.log(objColVals)
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
